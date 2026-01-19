@@ -1,0 +1,10 @@
+# print("This is task 1")
+# Task 1
+try:
+   fh=open("sample.txt","rt")
+   content=fh.read()
+   fh.close()
+   print(content)
+   print(type(content))
+except  FileNotFoundError:
+    print("File not exists.")
