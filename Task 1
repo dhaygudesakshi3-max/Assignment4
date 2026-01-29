@@ -1,33 +1,21 @@
 # print("This is task 1")
 # Task 1
-i) Open and read file line by line
-# This is a sample.txt file
-This is a sample file.
-It contains multiple lines.
-This file is use for read the data.
+# Task 1
+# Read a file and handle errors
 
-# This is a code
-fh=open("sample.txt",'rt')
-line1=fh.readline()
-line2=fh.readline()
-line3=fh.readline()
-fh.close()
-print(line1)
-print(line2)
-print(line3)
+filename = "sample.txt"
 
-ii) exception handling using try and except block
 try:
-   fh=open("sample.txt","rt")
-   line_1 = fh.readline()
-   line_2 = fh.readline()
-   line_3 = fh.readline()
-   fh.close()
-   print(line_1)
-   print(line_2)
-   print(line_3)
-except  FileNotFoundError:
-    print("File not exists.")
+    print("Reading file content:\n")
+
+    with open(filename, "r") as file:
+        for i, line in enumerate(file, start=1):
+            print(f"Line {i}: {line.strip()}")
+
+except FileNotFoundError:
+    print(f"Error: The file '{filename}' was not found.")
+
+
 
 
 
